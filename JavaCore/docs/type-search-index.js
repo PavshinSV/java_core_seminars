@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","u":"allclasses-index.html"},{"p":"ru.gb.javacore.seminar01.View","l":"Decorator"},{"p":"ru.gb.javacore.seminar01","l":"Main"},{"p":"ru.gb.javacore.seminar01.Entitis","l":"Toy"}];updateSearchResults();

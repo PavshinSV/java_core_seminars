@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"ru.gb.javacore.seminar01"},{"l":"ru.gb.javacore.seminar01.Entitis"},{"l":"ru.gb.javacore.seminar01.View"}];updateSearchResults();
