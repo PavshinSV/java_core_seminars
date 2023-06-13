@@ -4,7 +4,7 @@ public class Toy {
     int id;
     String name;
     int count;
-    int number;
+    static int number;
 
     public Toy(String name, int count) {
         this.name = name;
