@@ -1,4 +1,4 @@
-package ru.gb.javacore.seminar01.View;
+package main.java.ru.gb.javacore.seminar01.View;
 
 public class Decorator {
     /**

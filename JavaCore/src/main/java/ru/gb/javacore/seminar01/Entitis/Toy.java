@@ -1,4 +1,4 @@
-package ru.gb.javacore.seminar01.Entitis;
+package main.java.ru.gb.javacore.seminar01.Entitis;
 
 /**
  * Class of Toy

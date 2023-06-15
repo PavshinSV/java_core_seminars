@@ -1,11 +1,10 @@
-package ru.gb.javacore.seminar01;
-
-
-import ru.gb.javacore.seminar01.Entitis.Toy;
-import ru.gb.javacore.seminar01.View.Decorator;
+package main.java.ru.gb.javacore.seminar01;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import main.java.ru.gb.javacore.seminar01.Entitis.Toy;
+import main.java.ru.gb.javacore.seminar01.View.Decorator;
 
 public class Main {
 
