@@ -18,6 +18,14 @@ public class Employee {
         this.uid = ++count;
     }
 
+    public Employee(){
+        this("Anonim");
+    }
+
+    public Employee(String fio){
+        this(fio, "unemployed", "no phone", 0,0);
+    }
+
     public String getFio() {
         return fio;
     }
