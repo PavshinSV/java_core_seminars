@@ -31,8 +31,8 @@ public class Goods {
     @Override
     public String toString() {
         return "Goods{" +
-                "title = " + title +
-                ", cost = " + cost +
+                "title='" + title + '\'' +
+                ", cost=" + cost +
                 '}';
     }
 }
