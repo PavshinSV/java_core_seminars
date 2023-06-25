@@ -4,6 +4,7 @@ import main.java.ru.gb.javacore.seminar04.entities.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Main {
     public static List<Customer> customers = new ArrayList<>();
@@ -30,6 +31,14 @@ public class Main {
         for (Order order : orders) {
             System.out.println(order);
         }
+
+        randomSale(goodsList.get(2));
+
+        System.out.println("---------");
+
+        for (Order order : orders) {
+            System.out.println(order);
+        }
     }
 
 
@@ -42,6 +51,16 @@ public class Main {
             System.out.println(e + " " + goods);
         } catch (AmountException e) {
             purchase(customer, goods, (short) 1);
+        }
+    }
+
+    public static void randomSale(Goods goods){
+        var volume = Sale.values();
+        int choice = new Random().nextInt(volume.length);
+        Sale sale = volume[choice];
+        goods.setSale(sale);
+        for (Order o: orders){
+            o.renewValue();
         }
     }
 }

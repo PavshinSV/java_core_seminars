@@ -6,10 +6,12 @@ package main.java.ru.gb.javacore.seminar04.entities;
 public class Goods {
     private String title;
     private int cost;
+    Sale sale;
 
     public Goods(String title, int cost) {
         this.title = title;
         this.cost = cost;
+        this.sale = Sale.ZERO;
     }
 
     public String getTitle() {
@@ -28,11 +30,20 @@ public class Goods {
         this.cost = cost;
     }
 
+    public Sale getSale() {
+        return sale;
+    }
+
+    public void setSale(Sale sale) {
+        this.sale = sale;
+    }
+
     @Override
     public String toString() {
         return "Goods{" +
                 "title='" + title + '\'' +
                 ", cost=" + cost +
+                ", sale=" + sale +
                 '}';
     }
 }

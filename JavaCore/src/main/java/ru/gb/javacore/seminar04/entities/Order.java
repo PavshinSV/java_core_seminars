@@ -10,6 +10,7 @@ public class Order {
     private Customer customer;
     private Goods goods;
     private short amount;
+    private int value;
     private static int count;
 
     public Order(Customer customer, Goods goods, short amount) {
@@ -17,26 +18,27 @@ public class Order {
         this.customer = customer;
         this.goods = goods;
         this.amount = amount;
+        this.value = amount * goods.getCost();
     }
 
     public static Order makePurchase(Customer customer, Goods goods, short amount) throws CustomerExceptions, GoodsException, AmountException {
 
-        if (customer == null){
+        if (customer == null) {
             throw new CustomerExceptions("Пользователь не инициализирован");
         }
-        if (!Main.customers.contains(customer)){
+        if (!Main.customers.contains(customer)) {
             throw new CustomerExceptions("Пользователь отсутствует в списке");
         }
 
-        if (goods == null){
+        if (goods == null) {
             throw new GoodsException("Товар не инициализирован");
         }
-        if (!Main.goodsList.contains(goods)){
+        if (!Main.goodsList.contains(goods)) {
             throw new GoodsException("Товар отсутствует в списке");
         }
 
 
-        if (amount<1 || amount>100){
+        if (amount < 1 || amount > 100) {
             throw new AmountException("Неверно указано количество товара");
         }
         return new Order(customer, goods, amount);
@@ -74,6 +76,19 @@ public class Order {
         this.amount = amount;
     }
 
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public void renewValue(){
+        int decrease = 100-this.goods.getSale().getValue();
+        this.value=this.amount*this.goods.getCost()*decrease/100;
+    }
+
     @Override
     public String toString() {
         return "Order{" +
@@ -81,6 +96,7 @@ public class Order {
                 ", customer=" + customer +
                 ", goods=" + goods +
                 ", amount=" + amount +
+                ", value=" + value +
                 '}';
     }
 }
