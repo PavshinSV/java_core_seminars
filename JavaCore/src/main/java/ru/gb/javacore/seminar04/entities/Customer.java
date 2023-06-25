@@ -9,13 +9,15 @@ public class Customer {
     private String surname;
     private short age;
     private String phoneNumber;
+    private Gender gender;
 
-    public Customer(String patronymic, String name, String surname, short age, String phoneNumber) {
+    public Customer(String patronymic, String name, String surname, Gender gender, short age, String phoneNumber) {
         this.patronymic = patronymic;
         this.name = name;
         this.surname = surname;
         this.age = age;
         this.phoneNumber = phoneNumber;
+        this.gender=gender;
     }
 
     public String getPatronymic() {
@@ -58,12 +60,21 @@ public class Customer {
         this.phoneNumber = phoneNumber;
     }
 
+    public Gender getGender() {
+        return gender;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
+    }
+
     @Override
     public String toString() {
         return "Customer{" +
                 "patronymic = " + patronymic +
                 ", name = " + name +
                 ", surname = " + surname +
+                ", gender = " + gender +
                 ", age= " + age +
                 ", phoneNumber = " + phoneNumber +
                 '}';

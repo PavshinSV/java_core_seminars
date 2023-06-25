@@ -11,8 +11,8 @@ public class Main {
     public static List<Goods> goodsList = new ArrayList<>();
 
     public static void main(String[] args) {
-        customers.add(new Customer("Pavshin", "Sergei", "Valentinovich", (short) 43, "+7-953-588-79-36"));
-        customers.add(new Customer("Pavshina", "Natalia", "Fedorovna", (short) 45, "+7-902-920-51-56"));
+        customers.add(new Customer("Pavshin", "Sergei", "Valentinovich", Gender.MALE, (short) 43, "+7-953-588-79-36"));
+        customers.add(new Customer("Pavshina", "Natalia", "Fedorovna", Gender.FEMALE, (short) 45, "+7-902-920-51-56"));
         goodsList.add(new Goods("Огурец", 140));
         goodsList.add(new Goods("Апельсин", 280));
         goodsList.add(new Goods("Помидор", 400));
@@ -21,7 +21,7 @@ public class Main {
 
         purchase(customers.get(0), goodsList.get(0), (short) 12);
         purchase(customers.get(1), goodsList.get(2), (short) 5);
-        //purchase(new Customer("Pavshin", "Egor", "Sergeevich", (short) 10, "Green"), goodsList.get(1), (short) 1);
+        //purchase(new Customer("Pavshin", "Egor", "Sergeevich", Gender.MALE, (short) 10, "Green"), goodsList.get(1), (short) 1);
         purchase(customers.get(1), new Goods("Авокадо", (short)500), (short) 5);
         purchase(customers.get(1), goodsList.get(2), (short) 500);
         purchase(customers.get(0), goodsList.get(3), (short) 20);
