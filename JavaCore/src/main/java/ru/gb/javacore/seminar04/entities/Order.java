@@ -84,9 +84,12 @@ public class Order {
         this.value = value;
     }
 
-    public void renewValue(){
-        int decrease = 100-this.goods.getSale().getValue();
-        this.value=this.amount*this.goods.getCost()*decrease/100;
+    public void renewValue() throws TooMuchSaleException {
+        if (this.goods.classesOfGoods == Classes.PREMIUM && this.goods.sale.getValue() > 15) {
+            throw new TooMuchSaleException("Слишком большая скидка на категорию типа Премиум: " + this.goods);
+        }
+        int decrease = 100 - this.goods.getSale().getValue();
+        this.value = this.amount * this.goods.getCost() * decrease / 100;
     }
 
     @Override

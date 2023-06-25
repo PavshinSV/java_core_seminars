@@ -32,9 +32,11 @@ public class Main {
             System.out.println(order);
         }
 
-        randomSale(goodsList.get(2));
-
         System.out.println("---------");
+
+        goodsList.get(0).setClassesOfGoods(Classes.PREMIUM);
+        goodsList.get(0).setSale(Sale.TWENTY);
+        randomSale(goodsList.get(2));
 
         for (Order order : orders) {
             System.out.println(order);
@@ -60,7 +62,11 @@ public class Main {
         Sale sale = volume[choice];
         goods.setSale(sale);
         for (Order o: orders){
-            o.renewValue();
+            try {
+                o.renewValue();
+            } catch (TooMuchSaleException e) {
+                System.out.println(e);;
+            }
         }
     }
 }

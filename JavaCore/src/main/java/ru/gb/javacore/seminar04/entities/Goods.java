@@ -7,11 +7,13 @@ public class Goods {
     private String title;
     private int cost;
     Sale sale;
+    Classes classesOfGoods;
 
     public Goods(String title, int cost) {
         this.title = title;
         this.cost = cost;
         this.sale = Sale.ZERO;
+        this.classesOfGoods = Classes.STANDARD;
     }
 
     public String getTitle() {
@@ -38,12 +40,21 @@ public class Goods {
         this.sale = sale;
     }
 
+    public Classes getClassesOfGoods() {
+        return classesOfGoods;
+    }
+
+    public void setClassesOfGoods(Classes classesOfGoods) {
+        this.classesOfGoods = classesOfGoods;
+    }
+
     @Override
     public String toString() {
         return "Goods{" +
                 "title='" + title + '\'' +
                 ", cost=" + cost +
                 ", sale=" + sale +
+                ", classes of goods=" + classesOfGoods +
                 '}';
     }
 }
