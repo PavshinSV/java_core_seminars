@@ -3,14 +3,14 @@ package main.java.ru.gb.javacore.seminar05.controllers;
 import java.io.FileOutputStream;
 import java.nio.file.Path;
 
-public class tictactoe_serialization_to_byte {
+public class Tictactoe_serialization_to_byte {
     public static void toFile(Path path, int[] array) throws Exception {
         if (array.length!=9){
             throw new Exception("Wrong size of array. Size must be 9");
         }
         byte[] bytes = new byte[3];
         for (int i = 0; i<3;i++){
-            bytes[i] = getByte(array[i],array[i+1],array[i+2]);
+            bytes[i] = getByte(array[i*3],array[i*3+1],array[i*3+2]);
         }
         try (FileOutputStream fos = new FileOutputStream(path.toAbsolutePath().toString())){
             fos.write(bytes);
